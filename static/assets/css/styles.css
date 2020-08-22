@@ -1,0 +1,11 @@
+.nav-link.active {
+  /*color: #e31a1a;*/
+  background-color: red;
+  color: rgba(0,0,0,0.9);
+}
+
+.nav-link.active1 {
+  background-color: red;
+  color: rgba(237,17,17,0.9);
+}
+

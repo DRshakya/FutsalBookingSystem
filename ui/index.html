@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home</title>
+    <link rel="stylesheet" href="../../static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../../static/assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="../../static/assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="../../static/assets/css/styles.css">
+</head>
+
+<body>
+    <div>
+        {% include "navs.html" %}
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+          <img class="mySlides" src="../../static/assets/img/slide1.png ">
+          <img class="mySlides" src="../../static/assets/img/slide2.png" >
+          <img class="mySlides" src="../../static/assets/img/slide3.png">
+          <img class="mySlides" src="../../static/assets/img/slide4.png">
+          <img class="mySlides" src="../../static/assets/img/slide5.png">
+          <img class="mySlides" src="../../static/assets/img/slide6.png" >
+          <img class="mySlides" src="../../static/assets/img/slide7.png" >
+          <img class="mySlides" src="../../static/assets/img/slide8.png" >
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+	}
+</script>
+</div>
+</div>
+        <div class="row">
+            <div class="col-md-12">
+    <div id="footer" class="footer-basic">
+        <footer>
+            <div class="social"><a href="http://www.instagram.com/kumarifutsal"><i class="icon ion-social-instagram"></i></a><a href="http://www.youtube.com/kumarifutsal"><i class="icon ion-social-youtube"></i></a><a href="http://www.facebook.com/kumarifutsal"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Kumari Futsal © 2019</p>
+        </footer>
+    </div>
+        </div>
+    </div>
+        </div>
+    <script src="../../static/assets/js/jquery.min.js"></script>
+    <script src="../../static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="../../static/assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>

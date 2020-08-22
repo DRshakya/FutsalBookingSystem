@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Signin</title>
+    <link rel="stylesheet" href="../../static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="../../assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../../static/assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="../../static/assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="../../static/assets/css/styles.css">
+</head>
+
+<body>
+    <div>
+        {% include "navs.html" %}
+    </div>
+
+    <div class="login-clean">
+        <form method="post" action="/account/signin/" enctype="multipart/form-data">
+            <h2 class="sr-only">Login Form</h2>
+            {% if error_msg %}
+                <div class="alert alert-danger">{{ error_msg }}</div>
+            {% endif %}
+            {% if success_msg %}
+                <div class="alert alert-success">{{ success_msg }}</div>
+            {% endif %}
+            {% csrf_token %}
+            <div class="illustration"><img src="../../static/assets/img/logo.png"></div>
+            <div class="form-group"><input class="form-control" type="email" name="txtEmail" id="txtEmail" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="password" name="txtPassword" id="txtPassword" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(225, 67, 56);">Log In</button></div><a class="forgot" href="#">Forgot your email or password?</a></form>
+    </div>
+    <script src="../../static/assets/js/jquery.min.js"></script>
+    <script src="../../static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="../../static/assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>

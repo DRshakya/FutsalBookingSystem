@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../../static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../../static/assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="../../static/assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="../../static/assets/css/styles.css">
+
+</head>
+
+<body>
+    <div>
+        {% include "navs.html" %}
+    </div>
+    <div class="login-clean">
+        <form method="post" action="/account/signup/" style="width: 444px;height: 700px;margin-top: -60px;">
+            <h2 class="sr-only">Login Form</h2>
+            <input class="form-control-plaintext" type="text" value="Sign Up" readonly="" style="font-size: 24px;color: rgb(225, 67, 56);">
+            <input class="form-control-plaintext" type="text" value="Please fill in the form to create an account!"  style="font-size: 12px;color: rgb(119,119,119);">
+            {% if invalid_msg %}
+                <div class="alert alert-danger">
+                    {{ invalid_msg }}
+                </div>
+            {% endif %}
+            {% if success_msg %}
+                <div class="alert alert-success">
+                {{ success_msg }}
+                </div>
+            {% endif %}
+            {% csrf_token %}
+            <input class="form-control" type="text" placeholder="Full Name" name="txtFullname" id="txtFullname" value="{% if user_register %}{{ user_register.user.fname }}{% endif %}" required="" minlength="4" pattern="^[a-z A-Z]*$">
+            <input class="form-control" type="text" placeholder="Address" name="txtAddress" style="margin-top: 15px;" value="{% if user_register %}{{ user_register.user.address }}{% endif %}" required="" minlength="4" pattern="^[a-zA-Z]*$">
+            <input class="form-control" type="text" placeholder="Phone Number" name="txtPhone"style="margin-top: 15px;" value="{% if user_register %}{{ user_register.user.phone }}{% endif %}" required="" minlength="9" pattern="^[0-9]*$">
+            <div class="form-group"><input class="form-control" type="email" name="txtEmail" id="txtEmail" placeholder="Email" style="padding: 7px;margin-top: 15px;" value="{% if user_register %}{{ user_register.user.email }}{% endif %}" required="" minlength="4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></div>
+            <div class="form-group"><input class="form-control" type="password" name="txtPassword" id="txtPassword" placeholder="Password" style="margin-top: 15px;" required="" minlength="8"></div>
+            <div class="form-group"><input class="form-control" type="password" name="txtCPassword" id="txtCPassword" placeholder="Confirm Password" style="margin-top: 15px;" required="" minlength="8" ></div>
+            <button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(225, 67, 56);">Sign Up</button><input class="form-control-plaintext"
+                type="text" value="By clicking the Sign Up button, you agree to our  " readonly="" style="font-size: 11px;color: rgb(119,119,119);margin-left: 2px;margin-top: 6px;"><a href="#" style="color: rgb(71,244,161);font-size: 14px;">Terms &amp; Conditions.&nbsp;</a></form>
+    </div>
+    <script src="../../static/assets/js/jquery.min.js"></script>
+    <script src="../../static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    <script src="../../static/assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
